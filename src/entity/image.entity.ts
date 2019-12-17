@@ -1,4 +1,4 @@
-import { Entity, PrimaryGeneratedColumn, Column, Generated } from "typeorm";
+import { Entity, PrimaryGeneratedColumn, Column, Generated, CreateDateColumn } from "typeorm";
 
 @Entity()
 export class Image {
@@ -17,7 +17,7 @@ export class Image {
     @Column('int')
     useId?: number;
 
-    @Column({ type: 'timestamp', default: () => "CURRENT_TIMESTAMP(6)" })
+    @CreateDateColumn({ type: 'timestamp', default: () => "CURRENT_TIMESTAMP(6)" })
     createDate?: Date;
  
 }

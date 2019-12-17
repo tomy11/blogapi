@@ -1,4 +1,4 @@
-import { Entity, PrimaryGeneratedColumn, Column, Generated, ManyToOne } from "typeorm";
+import { Entity, PrimaryGeneratedColumn, Column, Generated, ManyToOne, CreateDateColumn, UpdateDateColumn } from "typeorm";
 import { Post } from "./post.entity";
 
 @Entity()
@@ -18,10 +18,10 @@ export class Comment {
     @Column('int')
     commentPublished?: number;
 
-    @Column({ type: 'timestamp' })
+    @CreateDateColumn({ type: 'timestamptz', default: () => 'CURRENT_TIMESTAMP' })
     commentCreateAtDate?: Date;
 
-    @Column({ type: 'timestamp' })
+    @UpdateDateColumn({ type: 'timestamptz', default: () => 'CURRENT_TIMESTAMP' })
     commentUpdateAtDate?: Date;
 
     @Column({ type: 'datetime' })

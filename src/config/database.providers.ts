@@ -4,12 +4,12 @@ export const databaseProviders = [
   {
     provide: 'DATABASE_CONNECTION',
     useFactory: async () => await createConnection({
-      type: 'mssql',
-      host: 'NB_PRACHYA_W\\SQLEXPRESS',
-      port: 1433,
-      username: 'meta',
-      password: '057442852Chi',
-      database: 'blogdb',
+      type: 'postgres',
+      host: 'localhost',
+      port: 5432,
+      username: 'postgres',
+      password: '4321',
+      database: 'blogapipgdb',
       entities: [
           __dirname + '/../**/*.entity{.ts,.js}',
       ],

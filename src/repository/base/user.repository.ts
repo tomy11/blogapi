@@ -1,9 +1,16 @@
 import { Injectable } from '@nestjs/common';
 import { IUserRepository } from '../Irepository/IuserRepository';
-import { UserDto } from 'src/dto/user.dto';
+import { UserDto } from '../../dto/user.dto';
+import { User } from '../../entity/user.entity';
+import { EntityRepository } from 'typeorm';
+import { Logger, InternalServerErrorException } from '@nestjs/common';
 
-@Injectable()
+
+@EntityRepository(User)
 export class UserRepository implements IUserRepository {
+
+    private logger = new Logger('UserRepository');
+
     public async getAll(): Promise<UserDto> {
         throw new Error("Method not implemented.");
     }    
