@@ -2,7 +2,7 @@ import { Module } from '@nestjs/common';
 import { BlogModule } from './modules/blog.module';
 import { BlogController } from './controllers/blog.controller';
 import { BlogService } from './services/blog.service';
-import { BlogRepository } from './repository/blog.repository';
+import { BlogRepository } from './repository/base/blog.repository';
 
 @Module({
   imports: [BlogModule],
