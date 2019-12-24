@@ -31,10 +31,10 @@ export class Post {
     @Column('int')
     published?: number;
 
-    @Column({ type: 'timestamp' , default: () => "CURRENT_TIMESTAMP(6)"})
+    @Column({ type: 'timestamp' , default: () => "CURRENT_TIMESTAMP"})
     createAtDate?: Date;
 
-    @Column({ type: 'timestamp', default: () => "CURRENT_TIMESTAMP(6)", onUpdate: "CURRENT_TIMESTAMP(6)" })
+    @Column({ type: 'timestamp', default: () => "CURRENT_TIMESTAMP", onUpdate: "CURRENT_TIMESTAMP" })
     updateAtDate?: Date;
 
     @Column({ type: 'datetime' })
