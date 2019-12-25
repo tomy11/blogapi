@@ -1,8 +1,8 @@
 {
   "name": "blogms",
   "version": "0.0.1",
-  "description": "",
-  "author": "",
+  "description": "blog api",
+  "author": "tomy",
   "license": "MIT",
   "scripts": {
     "prebuild": "rimraf dist",
