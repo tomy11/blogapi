@@ -1,15 +1,16 @@
 import { Injectable, Inject } from '@nestjs/common';
+import { InjectRepository } from '@nestjs/typeorm';
 import { UserDto } from '../dto/user.dto';
 import { IUser } from '../interface/user.interface';
 import { Repository } from 'typeorm';
 import { User } from '../entity/user.entity';
+import { UserRepository } from "../repository/base/UserRepository";
 
 @Injectable()
 export class UserService {
     constructor(
-        //@InjectRepository(User)
-        @Inject('USER_REPOSITORY')
-        private readonly userRepository: Repository<User>,
+        @InjectRepository(UserRepository)
+        private readonly userRepository: UserRepository,
     ) { }
 
     public async getAllUser(): Promise<IUser[]> {
@@ -21,10 +22,7 @@ export class UserService {
     }
 
     public async createUser(user: UserDto): Promise<UserDto> {
-        const users = new User();
-        users.userName = user.userName,
-        users.passWord = users.passWord
-        const resdata = await this.userRepository.save(users);
+        const resdata = await this.userRepository.save(user);
         return resdata;
     }
 
