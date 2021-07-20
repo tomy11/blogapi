@@ -7,8 +7,8 @@ export const databaseProviders = [
       type: 'mssql',
       host: 'NB_PRACHYA_W\\SQLEXPRESS',
       port: 1433,
-      username: 'meta',
-      password: '057442852Chi',
+      username: 'users',
+      password: 'password',
       database: 'blogdb',
       entities: [
           __dirname + '/../**/*.entity{.ts,.js}',
